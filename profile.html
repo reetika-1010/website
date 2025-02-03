@@ -1,0 +1,75 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="profilepic.jpeg" alt="Profile Picture" class="profile-pic">
+            <h1 id="username">xyz</h1>
+            
+        </div>
+
+        <div class="profile-details">
+            <h2>Personal Information</h2>
+            <ul>
+                <li><strong>Email:</strong> name@example.com </li>
+                <li><strong>Phone:</strong> +91 854 123 5xxx</li>
+                <li><strong>Location:</strong> Kerala, India</li>
+                <li><strong>Birthday:</strong> January 1, 19xx</li>
+            </ul>
+        </div>
+
+        <div class="profile-actions">
+           
+            <a href="index.html" class="btn">Logout</a>
+        </div>
+    </div>
+<script>
+
+document.getElementById('username').textContent = localStorage.getItem('username');
+document.getElementById('mail').textContent = localStorage.getItem('mail');
+
+
+var username = localStorage.getItem('username');
+var email = localStorage.getItem('email');
+var password = localStorage.getItem('password');
+
+console.log(username, email, password);
+
+  <script>
+    
+        function loadUserData() {
+            
+            var username = localStorage.getItem('username');
+            var email = localStorage.getItem('email');
+            var password = localStorage.getItem('password');
+
+        
+            if (username && email && password) {
+               
+                document.getElementById('profile-username').textContent = username;
+                document.getElementById('profile-email').textContent = email;
+                document.getElementById('user-email').textContent = email;
+                document.getElementById('user-password').textContent = password;
+            } else {
+                
+                alert('No user data found. Please sign up first.');
+                window.a.href = 'signup.html'; // Redirect to sign-up page if data is not found
+            }
+        }
+
+        // Call the function to load user data when the page loads
+        window.onload = loadUserData;
+ 
+
+</script>
+
+
+</body>
+</html>
